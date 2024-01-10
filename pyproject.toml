@@ -1,0 +1,24 @@
+[project]
+name = "mlflow-llm"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "", email = ""},
+]
+dependencies = [
+    "mlflow>=2.9.2",
+    "transformers @ git+https://github.com/huggingface/transformers.git",
+    "setuptools>=69.0.3",
+    "torch>=2.1.2",
+    "torchvision>=0.16.2",
+    "python-dotenv>=1.0.0",
+    "bitsandbytes>=0.42.0",
+    "accelerate>=0.25.0",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+package-type = "application"
