@@ -19,6 +19,7 @@ class StopOnTokens(StoppingCriteria):
 
 if Path(".env").is_file():
     load_dotenv(".env")
+MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
 HF_TOKEN = os.getenv("HF_TOKEN")
 TRANSFORMERS_CACHE = os.getenv("TRANSFORMERS_CACHE")
 
@@ -79,6 +80,7 @@ params = {
     "repetition_penalty": 1.1,
 }
 
+mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 signature = mlflow.models.infer_signature(
     input_example,
     mlflow.transformers.generate_signature_output(generation_pipeline, input_example),
